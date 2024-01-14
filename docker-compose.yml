@@ -1,0 +1,31 @@
+version: "3"
+services:
+  api:
+    container_name: 'leads-api'
+    image: node:16
+    working_dir: /usr/src/server
+    #    command: bash -c "npm install --only=prod && npm run debug"
+    command: bash -c "npm install --only=prod && npm run debug"
+    environment:
+      - DB_LEADS=mysql://root:root@db:3306/tlemain_db
+    restart: 'no'
+    stdin_open: true
+    tty: true
+    ports:
+      - "5050:5050"
+      - "9222:9222"
+    volumes:
+      - ./dist/:/usr/src/server/dist/
+      - ./package.json:/usr/src/server/package.json
+    links:
+      - db
+  db:
+    container_name: 'leads-db'
+    image: mysql:5.7.12
+    restart: 'no'
+    volumes:
+      - ~/.tle-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
