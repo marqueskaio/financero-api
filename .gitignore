@@ -2,3 +2,5 @@ node_modules
 dist
 coverage
 !./data
+.env
+.env.test
