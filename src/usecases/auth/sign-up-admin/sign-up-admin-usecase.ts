@@ -17,7 +17,7 @@ export class SignUpAdminUsecase implements SignUpUsecaseInterface {
       throw new Error()
     }
     const passwordHashed = await this.hasher.hash(data.password)
-    return await this.userRepository.save({...data, password: passwordHashed, role: 'admin', accessToken: ''})
+    return await this.userRepository.create({...data, password: passwordHashed, role: 'admin', accessToken: ''})
   }
 
 }

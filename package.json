@@ -19,6 +19,7 @@
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
+    "db": "npm run db:generate && npm run db:push",
     "db:generate": "cd src/databases/maindb && prisma generate",
     "db:push": "cd src/databases/maindb && prisma db push",
     "db:test:generate": "dotenv -e .env.test prisma generate",
@@ -65,7 +66,8 @@
     "nodemon": "^2.0.20",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.6.2",
-    "validator": "^13.9.0"
+    "validator": "^13.9.0",
+    "yarn": "^1.22.21"
   },
   "keywords": [],
   "author": "",

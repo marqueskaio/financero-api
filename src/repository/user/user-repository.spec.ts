@@ -13,7 +13,7 @@ describe('UserRepository', () => {
   })
   test('ensure UserRepository save new user', async () => {
     const sut = makeSut()
-    const user = await sut.save(mockModelUser())
+    const user = await sut.create(mockModelUser())
     expect(user).toEqual(mockModelUser({id: 1}))
   })
   test('ensure UserRepository findByEmail return an user', async () => {

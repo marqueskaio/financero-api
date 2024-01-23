@@ -21,7 +21,7 @@ const makeSut = (): SutTypes => {
 describe('CreateUserUsecase', () => {
   test('ensure CreateUserUsecase calls userRepository.create with correct params', async() => {
     const {sut, userRepositoryStub} = makeSut()
-    const spy = jest.spyOn(userRepositoryStub, 'save')
+    const spy = jest.spyOn(userRepositoryStub, 'create')
     await sut.execute({})
     expect(spy).toHaveBeenCalledWith({})
   })
@@ -32,7 +32,7 @@ describe('CreateUserUsecase', () => {
   })
   test('ensure CreateUserUsecase return error if userRepository fail', async () => {
     const {sut, userRepositoryStub} = makeSut()
-    jest.spyOn(userRepositoryStub, 'save').mockImplementationOnce(throwException)
+    jest.spyOn(userRepositoryStub, 'create').mockImplementationOnce(throwException)
     const promise = sut.execute(mockModelUser())
     await expect(promise).rejects.toThrow()
   })

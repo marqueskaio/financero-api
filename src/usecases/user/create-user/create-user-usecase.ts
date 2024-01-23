@@ -10,7 +10,7 @@ export class CreateUserUsecase implements UsecaseInterface{
     if(hasUser) {
       throw new Error()
     }
-    return await this.userRepository.save(data)
+    return await this.userRepository.create(data)
   }
 
 }
