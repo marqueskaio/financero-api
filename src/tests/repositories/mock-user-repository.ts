@@ -4,7 +4,7 @@ import {mockModelUser} from "../factories/user-model-factory";
 
 export const mockUserRepository = (): UserRepositoryInterface => {
   class UserRepositoryStub implements UserRepositoryInterface {
-    save(): Promise<UsersModel | null> {
+    create(): Promise<UsersModel | null> {
       return Promise.resolve(mockModelUser());
     }
 

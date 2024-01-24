@@ -7,7 +7,7 @@ import {LoadAllUsersInterface} from "../../interfaces/repositories/user/load-all
 import {FindUserByIdInterface} from "../../interfaces/repositories/user/find-user-by-id-interface";
 
 export class UserRepository implements UserRepositoryInterface, LoadAccountByTokenRepository, LoadAllUsersInterface, FindUserByIdInterface {
-  async save(data: Omit<UsersModel, 'id'>): Promise<UsersModel | null> {
+  async create(data: Omit<UsersModel, 'id'>): Promise<UsersModel | null> {
     return DB.usersModel.create({data: data})
   }
 

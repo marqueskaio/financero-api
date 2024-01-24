@@ -17,3 +17,36 @@ model UsersModel {
 
   @@map("users")
 }
+
+model IncomesModel{
+  id          Int     @id @default(autoincrement())
+  value       Int     
+  description String
+  category    String?
+
+  @@map("incomes")
+}
+
+model ExpensesModel{
+  description String
+  data        DateTime?
+  created_at  DateTime?
+  deleted_at  DateTime?
+  value       Int
+  category    String
+  id          Int     @id @default(autoincrement())
+
+  @@map("expenses")
+}
+
+model DebtsModel{
+  bank            String
+  data        DateTime?
+  created_at  DateTime?
+  deleted_at  DateTime?
+  expiration_date String
+  value           Int
+  id              Int     @id @default(autoincrement())
+
+  @@map("debts")
+}

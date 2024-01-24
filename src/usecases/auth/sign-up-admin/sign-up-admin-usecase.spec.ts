@@ -25,15 +25,15 @@ const makeSut = (): SutTypes => {
 
 describe('SignUpAdmin Usecase', () => {
 
-  test('ensure SignUpAdmin call UserRepository.save with correct values', async () => {
+  test('ensure SignUpAdmin call UserRepository.create with correct values', async () => {
     const {sut, userRepositoryStub} = makeSut()
-    const saveSpy = jest.spyOn(userRepositoryStub, 'save')
+    const saveSpy = jest.spyOn(userRepositoryStub, 'create')
     await sut.execute(mockSignUpAdminParams())
     expect(saveSpy).toHaveBeenCalledWith(mockSignUpAdminParams({role: 'admin', password: 'hashed_value', accessToken: ''}))
   })
   test('ensure SignUpAdmin call UserRepository.save with role admin', async () => {
     const {sut, userRepositoryStub} = makeSut()
-    const saveSpy = jest.spyOn(userRepositoryStub, 'save')
+    const saveSpy = jest.spyOn(userRepositoryStub, 'create')
     await sut.execute(mockSignUpAdminParams({role: 'user'}))
     expect(saveSpy).toHaveBeenCalledWith(mockSignUpAdminParams({role: 'admin', password: 'hashed_value', accessToken: ''}))
   })
