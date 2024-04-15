@@ -1,3 +1,5 @@
+import {IncomesModel} from "@prisma/client";
+
 export interface CreateRepositoryInterface <P,R> {
-    create: (data: Omit<P,'id'>) => Promise<R | null>
+    create: (data: { data: Date; description: string; value: number }) => Promise<IncomesModel | null>
 }

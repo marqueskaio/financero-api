@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+
 const DB = new PrismaClient({
   datasources: {
     db: {
