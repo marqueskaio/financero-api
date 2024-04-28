@@ -22,7 +22,7 @@ model IncomesModel {
   id          Int       @id @default(autoincrement())
   value       Int
   description String
-  data        DateTime
+  data        String
   created_at  DateTime?
   deleted_at  DateTime?
   category    String?
