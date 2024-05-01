@@ -25,19 +25,19 @@ model IncomesModel {
   data        String
   created_at  DateTime?
   deleted_at  DateTime?
-  category    String?
+  category    String
 
   @@map("incomes")
 }
 
 model ExpensesModel {
+  id          Int       @id @default(autoincrement())
+  value       Int
   description String
-  data        DateTime?
+  data        String
   created_at  DateTime?
   deleted_at  DateTime?
-  value       Int
   category    String
-  id          Int       @id @default(autoincrement())
 
   @@map("expenses")
 }
