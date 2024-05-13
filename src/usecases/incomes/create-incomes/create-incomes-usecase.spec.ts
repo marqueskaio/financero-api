@@ -1,6 +1,6 @@
 import {CreateIncomesUsecase} from "./create-incomes-usecase";
 import {IncomesRepository} from "../../../repository/incomes/incomes-repository";
-import {mockModelIncomeData, mockModelIncomeParams} from "../../../tests/factories/mock-incomes-model";
+import {mockModelIncomeData, mockModelIncomeParams} from "../../../tests/data/mock-incomes-model";
 import {DbTableTruncate} from "../../../tests/helpers/db-table-truncate";
 import DB from "../../../databases";
 import {CreateRepositoryInterface} from "../../../interfaces/repositories/create-repository-interface";

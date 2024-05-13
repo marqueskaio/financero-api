@@ -3,7 +3,7 @@ import {UsecaseInterface} from "../../../interfaces/usecases/usecase-interface";
 import {mockCreateIncomesUsecase} from "../../../tests/usecases/mock-incomes-usecase";
 import {DbTableTruncate} from "../../../tests/helpers/db-table-truncate";
 import DB from "../../../databases";
-import {mockModelIncomeData} from "../../../tests/factories/mock-incomes-model";
+import {mockModelIncomeData} from "../../../tests/data/mock-incomes-model";
 import {ok, serverError} from "../../../helpers/http/http-helper";
 
 interface SutType {

@@ -1,6 +1,6 @@
 import {DbTableTruncate} from "../../tests/helpers/db-table-truncate";
 import {ExpensesRepository} from "./expenses-repository";
-import {mockModelExpensesData, mockModelExpensesParams} from "../../tests/factories/mock-expenses-model";
+import {mockModelExpensesData, mockModelExpensesParams} from "../../tests/data/mock-expenses-model";
 import DB from "../../databases";
 
 describe('ExpensesRepository', () => {

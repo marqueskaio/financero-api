@@ -1,7 +1,7 @@
 import { DbTableTruncate } from "../../tests/helpers/db-table-truncate"
 import { IncomesRepository } from "./incomes-repository"
 import DB from "../../databases"
-import {mockModelIncomeData, mockModelIncomeParams} from "../../tests/factories/mock-incomes-model";
+import {mockModelIncomeData, mockModelIncomeParams} from "../../tests/data/mock-incomes-model";
 
 describe('IncomesRepository', () => {
 

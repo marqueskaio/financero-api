@@ -4,7 +4,7 @@ import {ok} from "../../../helpers/http/http-helper";
 import {DbTableTruncate} from "../../../tests/helpers/db-table-truncate";
 import DB from "../../../databases";
 import {mockCreateExpensesUsecase} from "../../../tests/usecases/mock-expenses-usecase";
-import {mockModelExpensesData} from "../../../tests/factories/mock-expenses-model";
+import {mockModelExpensesData} from "../../../tests/data/mock-expenses-model";
 
 interface SutType {
     sut: CreateExpensesController

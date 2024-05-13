@@ -2,7 +2,7 @@ import {DbTableTruncate} from "../../tests/helpers/db-table-truncate";
 import DB from "../../databases";
 import request from "supertest";
 import app from "../config/app";
-import {mockModelIncomeData, mockModelIncomeParams} from "../../tests/factories/mock-incomes-model";
+import {mockModelIncomeData, mockModelIncomeParams} from "../../tests/data/mock-incomes-model";
 import {mockAccessToken} from "../../tests/helpers/mock-access-token";
 
 let accessToken: string

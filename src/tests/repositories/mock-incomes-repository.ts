@@ -1,5 +1,5 @@
 import {IncomesModel} from "@prisma/client";
-import {mockModelIncomeData} from "../factories/mock-incomes-model";
+import {mockModelIncomeData} from "../data/mock-incomes-model";
 import {CreateRepositoryInterface} from "../../interfaces/repositories/create-repository-interface";
 
 export const mockIncomesRepository = (): CreateRepositoryInterface<IncomesModel,IncomesModel> => {
