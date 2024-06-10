@@ -7,7 +7,7 @@ import {userMeController} from "../factories/user-me-factory";
 
 export default (router: Router): void => {
   router.get('/user/me', auth, adaptRoute(userMeController))
-  router.post('/user', adaptRoute(controller))
+  router.post('/user', auth, adaptRoute(controller))
   router.get('/user', auth, adaptRoute(userLoadController))
 
 }

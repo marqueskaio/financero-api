@@ -29,7 +29,7 @@ export class SignInController implements Controller {
       const accessToken = await this.encrypter.encrypt(result.id.toString())
       const user = await this.userRepository.updateAccessToken(result.id, accessToken)
       return ok(user)
-    } catch (e: any) {
+    }catch (e: any) {
       return serverError(e)
     }
   }

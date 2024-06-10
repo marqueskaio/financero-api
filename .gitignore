@@ -6,3 +6,6 @@ coverage
 .env.test
 jest-integration-config.js
 jest-unit-config.js
+
+jest-integration-config.js
+jest-unit-config.js

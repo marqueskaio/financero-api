@@ -4,7 +4,7 @@ import {signUpController} from "../factories/sign-up-factory";
 import {signInController} from "../factories/sign-in-factory";
 
 export default (router: Router): void => {
-  router.post('/sign-up/admin', adaptRoute(signUpController))
-  router.post('/sign-in/admin', adaptRoute(signInController))
+  router.post('/sign-up/:role', adaptRoute(signUpController))
+  router.post('/sign-in', adaptRoute(signInController))
 
 }

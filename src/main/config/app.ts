@@ -5,7 +5,7 @@ import setupSwagger from './config-swagger'
 
 const app = express()
 setupSwagger(app)
-app.use(express.json())
+app.use(express.json({limit: '500mb'}))
 setupMiddlewares(app)
 setupRoutes(app)
 export default app

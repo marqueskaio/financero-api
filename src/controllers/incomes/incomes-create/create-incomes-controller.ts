@@ -10,9 +10,9 @@ export class CreateIncomesController implements Controller {
     async handle(request: HttpRequest): Promise<HttpResponse> {
         try {
             const income = await this.createIncomesUsecase.execute(request.body)
-        return ok(income)
+            return ok(income)
         } catch (error: any) {
-        return serverError(error)
+            return serverError(error)
         }
     }
 }

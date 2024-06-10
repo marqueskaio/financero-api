@@ -17,18 +17,19 @@ export class SignUpController implements Controller {
 
   async handle(httpRequest: HttpRequest): Promise<any> {
     try {
-      const error = this.validation.validate(httpRequest.body)
+      const error = await this.validation.validate(httpRequest.body)
       if (error) {
         return badRequest(error)
       }
-      const user = await this.signUpUsecase.execute(httpRequest.body)
+      const data = {...httpRequest.body, role: httpRequest.params.role}
+      const user = await this.signUpUsecase.execute(data)
       if(!user) {
         return unauthorized()
       }
       const accessToken = await this.encrypter.encrypt(user.id.toString())
       const result = await this.userRepository.updateAccessToken(user.id, accessToken)
       return ok(result)
-    } catch (e: any) {
+    }catch (e: any) {
       return serverError(e)
     }
   }
