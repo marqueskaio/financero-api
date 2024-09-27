@@ -5,7 +5,7 @@ import {IncomesModel} from "@prisma/client";
 
 export class CreateIncomesUsecase implements UsecaseInterface {
     constructor(
-        private readonly incomesRepository: IncomesRepositoryInterface,
+        private readonly incomesRepository: IncomesRepositoryInterface<IncomesModel, IncomesModel>,
     ){}
 
     execute(data: Omit<IncomesModel, "id">): Promise<IncomesModel | null> {

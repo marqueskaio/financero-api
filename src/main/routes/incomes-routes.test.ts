@@ -1,4 +1,4 @@
-import {DbTableTruncate} from "../../tests/helpers/db-table-truncate";
+8import {DbTableTruncate} from "../../tests/helpers/db-table-truncate";
 import DB from "../../databases";
 import request from "supertest";
 import app from "../config/app";
