@@ -35,7 +35,8 @@ describe('Login Routes', () => {
       const passwordHashed = await hash('paulo', 12)
       await DB.usersModel.create({
         data: {
-          name: 'Paulo Victor',
+          name: 'Paulo',
+          undername: "Victor",
           email: 'paulo.telles@rockapps.com.br',
           password: passwordHashed,
           role: 'admin'

@@ -19,10 +19,11 @@ export class SignInController implements Controller {
     try {
       const {email, password} = httpRequest.body
       const result = await this.userRepository.findByEmail(email)
-      if (!result || result.role !== 'admin') {
+      if (!result || (result.role !== 'admin' && result.role !== 'user')) {
         return unauthorized()
       }
       const isValid = await this.hasher.compare(password, result.password)
+      console.log(isValid)
       if (!isValid) {
         return unauthorized()
       }
